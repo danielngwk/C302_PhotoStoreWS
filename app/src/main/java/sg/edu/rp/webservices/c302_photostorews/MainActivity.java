@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Category current = alCategories.get(position+1);
+                Category current = alCategories.get(position);
                 Intent i = new Intent(MainActivity.this, Activity2.class);
-                i.putExtra("current",current.toString());
+                Integer currid = current.getCategory_id();
+                i.putExtra("current",currid.toString());
                 startActivity(i);
             }
         });
